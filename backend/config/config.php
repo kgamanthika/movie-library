@@ -1,37 +1,25 @@
 <?php
 
+date_default_timezone_set('Asia/Colombo');
 return [
-
-    /*
-    |--------------------------------------------------------------------------
-    | Storage
-    |--------------------------------------------------------------------------
-    */
 
     'storage_file' => __DIR__ . '/../data/submissions.json',
 
-
-    /*
-    |--------------------------------------------------------------------------
-    | Email
-    |--------------------------------------------------------------------------
-    */
-
-    // Admin recipients required by the assessment
+    // Email configuration
     'admin_emails' => [
-        // 'dumidu.kodithuwakku@ebeyonds.com',
-        // 'prabhath.senadheera@ebeyonds.com'
-        'kgamanthika@gmail.com'
+        // 'manthikaamesh@gmail.com',
+        'dumidu.kodithuwakku@ebeyonds.com',
+        'prabhath.senadheera@ebeyonds.com',
     ],
 
-    // Name shown in emails
+    //email name
     'from_name' => 'Movie Library',
 
-    // Configure these values in the PHP server environment.
-    'smtp_host' => getenv('MOVIE_LIBRARY_SMTP_HOST') ?: 'smtp.gmail.com',
-    'smtp_username' => getenv('MOVIE_LIBRARY_SMTP_USERNAME') ?: '',
-    'smtp_password' => getenv('MOVIE_LIBRARY_SMTP_PASSWORD') ?: '',
-    'smtp_port' => (int) (getenv('MOVIE_LIBRARY_SMTP_PORT') ?: 587),
-    'smtp_encryption' => getenv('MOVIE_LIBRARY_SMTP_ENCRYPTION') ?: 'tls',
+    // SMTP configuration
+    'smtp_host' => $_ENV['MOVIE_LIBRARY_SMTP_HOST'] ?? 'smtp.gmail.com',
+    'smtp_username' => $_ENV['MOVIE_LIBRARY_SMTP_USERNAME'] ?? '',
+    'smtp_password' => $_ENV['MOVIE_LIBRARY_SMTP_PASSWORD'] ?? '',
+    'smtp_port' => (int) ($_ENV['MOVIE_LIBRARY_SMTP_PORT'] ?? 587),
+    'smtp_encryption' => $_ENV['MOVIE_LIBRARY_SMTP_ENCRYPTION'] ?? 'tls',
 
 ];

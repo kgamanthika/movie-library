@@ -76,16 +76,16 @@ class ContactController
 
 
 
-    // if (!$userEmailSent || !$adminEmailSent) {
-    //     return [
-    //         'success' => false,
-    //         'message' => 'Your submission was saved, but we could not send the confirmation email. Please contact the administrator.',
-    //         'email' => [
-    //             'user' => $userEmailSent,
-    //             'admin' => $adminEmailSent
-    //         ]
-    //     ];
-    // }
+    if (!$userEmailSent || !$adminEmailSent) {
+        return [
+            'success' => false,
+            'message' => 'Your submission was saved, but we could not send the confirmation email. Please contact the administrator.',
+            'email' => [
+                'user' => $userEmailSent,
+                'admin' => $adminEmailSent
+            ]
+        ];
+    }
 
 
    // Return result
